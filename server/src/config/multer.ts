@@ -2,6 +2,8 @@ import multer from 'multer';
 import path from 'path';
 import crypto from 'crypto';
 
+// Multer is used to upload files ( in this case, the image for the collection point).
+
 export default {
     storage: multer.diskStorage({
         destination: path.resolve(__dirname, '..', '..', 'uploads'),

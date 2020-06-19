@@ -3,7 +3,7 @@ import multer from 'multer';
 import multerConfig from './config/multer'
 import PointsController from './controllers/PointsController';
 import ItemsController from './controllers/ItemsController';
-import { celebrate, Joi } from 'celebrate';
+import { celebrate, Joi } from 'celebrate'; // The sole use of celebrate is making sure that the request comes in the correct shape and if not, a standard exception is returned.
 
 
 const routes = express.Router();
@@ -13,11 +13,9 @@ const pointsController = new PointsController();
 const itemsController = new ItemsController();
 
 
-
 routes.get('/points/:id', pointsController.show);
 routes.get('/points', pointsController.index);
 routes.get('/items', itemsController.index);
-
 
 routes.post('/points',
 upload.single('image'),
